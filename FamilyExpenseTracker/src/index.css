@@ -1,0 +1,160 @@
+/* Center the entire app and add padding */
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0; /* Light gray background for a desktop feel */
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+  position: fixed; /* Fix the navbar at the top */
+  top: 0; /* Position it at the very top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  height: 100px;
+  background-color: #007bff; /* Primary color */
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.navbar-title {
+  padding-top: 30px;
+  margin: 0;
+  font-size: 36px;
+}
+
+/* Container styling for a card-like layout */
+.container {
+  width: 90%;
+  height: 500px; /* Fixed height for a desktop feel */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly larger shadow */
+  margin-top: 120px; /* Space from the navbar */
+  overflow-y: auto; /* Enable scrolling if content exceeds the height */
+}
+
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Increased gap between form elements */
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 16px; /* Larger font size for labels */
+  color: #333; /* Darker label color */
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px; /* Increased padding for input fields and select */
+  border: 1px solid #ccc; /* Lighter border */
+  border-radius: 4px;
+  font-size: 18px; /* Larger font size for input */
+}
+/* Button styling */
+.submit-button {
+  padding: 12px; /* Increased padding for the button */
+  background-color: #007bff; /* Primary color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px; /* Increased font size for better readability */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.submit-button:hover {
+  background-color: #0056b3; /* Darker on hover */
+}
+
+/* Total expense styling */
+.total-expense {
+  font-size: 20px; /* Increased font size for visibility */
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Expense card styling */
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between cards */
+}
+
+.expense-card {
+  background-color: #f9f9f9; /* Light background for the card */
+  border: 1px solid #ddd; /* Border for the card */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Padding inside the card */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+/* Message when no expenses are present */
+.no-expenses {
+  color: #888;
+  font-size: 16px; /* Slightly larger font size */
+  text-align: center; /* Center the message */
+}
+
+/* Navbar link styles */
+.nav-links {
+  display: flex;
+  gap: 20px; /* Space between links */
+  margin-top: 10px; /* Margin above links */
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none; /* Remove underline */
+  padding: 10px; /* Padding around links */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Lighten on hover */
+}
+
+.filter-options {
+  margin: 20px 0; /* Space around filter buttons */
+}
+
+.filter-options button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-options button:hover {
+  background-color: #0056b3; /* Darker on hover */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .container {
+    width: 90%; /* Adjust width on smaller screens */
+  }
+}
