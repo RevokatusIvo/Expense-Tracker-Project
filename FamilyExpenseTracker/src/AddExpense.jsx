@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+import { useNavigate } from "react-router-dom";
 
 function AddExpense({ setTransactions }) {
   const [title, setTitle] = useState("");
@@ -7,21 +7,28 @@ function AddExpense({ setTransactions }) {
   const [date, setDate] = useState("");
   const [type, setType] = useState("expense");
 
-  const navigate = useNavigate(); // Create navigate function
+  const navigate = useNavigate();
 
   const addTransaction = (e) => {
     e.preventDefault();
     if (!title || !amount || !date) return;
 
-    const newTransaction = { title, amount: parseFloat(amount), date, type };
+    const newTransaction = {
+      title,
+      amount: parseFloat(amount),
+      date,
+      type,
+    };
     setTransactions((prev) => [...prev, newTransaction]);
 
+    // Clear inputs
     setTitle("");
     setAmount("");
     setDate("");
     setType("expense");
 
-    navigate("/view-expenses"); // Navigate to the view page after adding
+    // Navigate to view expenses
+    navigate("/view-expenses");
   };
 
   return (
@@ -56,12 +63,18 @@ function AddExpense({ setTransactions }) {
         </div>
         <div className="form-group">
           <label>Transaction Type:</label>
-          <select value={type} onChange={(e) => setType(e.target.value)} required>
+          <select
+            value={type}
+            onChange={(e) => setType(e.target.value)}
+            required
+          >
             <option value="expense">Expense</option>
             <option value="income">Income</option>
           </select>
         </div>
-        <button type="submit" className="submit-button">Add Transaction</button>
+        <button type="submit" className="submit-button">
+          Add Transaction
+        </button>
       </form>
     </div>
   );
