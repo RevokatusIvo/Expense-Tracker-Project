@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { collection, addDoc } from "firebase/firestore"; // Import Firestore functions
+import { db } from "./firebasecin/firebase";
 function AddExpense({ setTransactions }) {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
@@ -9,7 +10,7 @@ function AddExpense({ setTransactions }) {
 
   const navigate = useNavigate();
 
-  const addTransaction = (e) => {
+  const addTransaction = async (e) => {
     e.preventDefault();
     if (!title || !amount || !date) return;
 
@@ -19,16 +20,25 @@ function AddExpense({ setTransactions }) {
       date,
       type,
     };
-    setTransactions((prev) => [...prev, newTransaction]);
 
-    // Clear inputs
-    setTitle("");
-    setAmount("");
-    setDate("");
-    setType("expense");
+    try {
+      // Add the transaction to Firestore
+      await addDoc(collection(db, "transactions"), newTransaction);
 
-    // Navigate to view expenses
-    navigate("/view-expenses");
+      // Update local transactions state
+      setTransactions((prev) => [...prev, newTransaction]);
+
+      // Clear inputs
+      setTitle("");
+      setAmount("");
+      setDate("");
+      setType("expense");
+
+      // Navigate to view expenses
+      navigate("/view-expenses");
+    } catch (error) {
+      console.error("Error adding transaction to Firestore: ", error);
+    }
   };
 
   return (
