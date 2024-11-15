@@ -29,7 +29,7 @@ function Login() {
 
   return (
     <div className="app">
-      <div className="login-container">
+      <div className="container">
         <h2 className="login-title">{isLogin ? 'Login' : 'Sign Up'}</h2>
         <form onSubmit={handleAuth} className="login-form">
           <div className="form-group">
