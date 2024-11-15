@@ -18,17 +18,18 @@ function Navbar({ user }) {
   return (
     <nav className="navbar">
       <h1 className="navbar-title">Expense Tracker</h1>
-      <div className="nav-links">
-        {user ? (
-          <>
-            <Link to="/" className="nav-link">Dashboard</Link>
-            <Link to="/add-expenses" className="nav-link">Add Expense</Link>
-            <Link to="/view-expenses" className="nav-link">View Expenses</Link>
-            <button onClick={handleLogout} className="nav-link">Logout</button>
-          </>
-        ) : (
-          <Link to="/login" className="nav-link" >Login</Link>
-        )}
+      <div className='nav-links-container'>
+        
+        <div className="nav-links">
+          {user ? (
+            <>
+              <Link to="/" className="nav-link">Dashboard</Link>
+              <Link to="/add-expenses" className="nav-link">Add Expense</Link>
+              <Link to="/view-expenses" className="nav-link">View Expenses</Link>
+              <Link onClick={handleLogout} className="nav-link">Logout</Link>
+            </>
+          ) : null}
+        </div>
       </div>
     </nav>
   )

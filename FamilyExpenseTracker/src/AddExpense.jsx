@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore"; // Import Firestore functions
 import { db } from "./firebasecin/firebase";
+import {auth} from "./firebasecin/firebase";
 function AddExpense({ setTransactions }) {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
@@ -9,7 +10,7 @@ function AddExpense({ setTransactions }) {
   const [type, setType] = useState("expense");
 
   const navigate = useNavigate();
-
+  const userId = auth.currentUser.uid;
   const addTransaction = async (e) => {
     e.preventDefault();
     if (!title || !amount || !date) return;
@@ -19,6 +20,7 @@ function AddExpense({ setTransactions }) {
       amount: parseFloat(amount),
       date,
       type,
+      userId
     };
 
     try {

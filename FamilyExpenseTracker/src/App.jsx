@@ -29,7 +29,7 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <Navbar user={user} />
+      {location.pathname !== '/login' && <Navbar user={user} />}
         <Routes>
           <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
           <Route
