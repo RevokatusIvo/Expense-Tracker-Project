@@ -1,0 +1,153 @@
+/* Create Family Container */
+.create-family-container {
+    width: 100%;
+    max-width: 800px; /* Control width of the form */
+    margin-top: 90px; /* Space from the navbar */
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Title */
+  .create-family-title {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Group Name and Description */
+  .form-group label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: #007bff;
+  }
+  .form-group .member-input{
+    margin-bottom: 20px;
+  }
+  
+  /* Add Member Button */
+  .add-member-button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%; /* Make button fill the width of the container */
+  }
+  
+  .add-member-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Remove Member Button */
+  .remove-member-button {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .remove-member-button:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Submit Button */
+  .submit-button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%; /* Make button fill the width of the container */
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .submit-button:active {
+    transform: scale(0.98);
+  }
+  
+  /* Error Message */
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  /* Members Form Section */
+  .members-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .member-input {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .member-input input,
+  .member-input select {
+    width: 45%; /* Adjust width of inputs */
+  }
+  
+  .member-input select {
+    padding: 10px;
+  }
+  
+  /* Toggle Member Role */
+  .toggle-button {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .toggle-button:hover {
+    text-decoration: underline;
+  }
+  

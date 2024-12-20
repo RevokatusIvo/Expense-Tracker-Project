@@ -1,0 +1,157 @@
+.manage-family-container {
+    width: 200%;
+    max-width: 800px; /* Control width of the form */
+    margin-top: 90px; /* Space from the navbar */
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .manage-family-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  
+  .form-label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #000;
+  }
+  
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  .form-input:focus,
+  .form-textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .form-textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  .members-section {
+    margin-top: 10px;
+  }
+  .members-section h2,h3{
+    font-size: 16px;
+  }
+  
+  .members-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .member-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px; /* Increased padding for a spacious look */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px; /* Added margin between list items */
+  }
+  
+  .member-id {
+    font-size: 15px;
+    font-weight: 500;
+    margin-right: 15px; /* Spacing between ID and other elements */
+    flex: 1; /* Flexible layout for the ID section */
+    color: #333;
+  }
+  
+  .role-selector {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px; /* Space between the selector and delete button */
+    flex-shrink: 0;
+  }
+  
+  .delete-button {
+    padding: 8px 12px; /* Adjusted padding for better clickability */
+    font-size: 14px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+  }
+  
+  .update-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .update-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  .loading,
+  .not-found {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+    margin-top: 50px;
+  }
+  
+  .add-member-section {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  .add-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-button:hover {
+    background-color: #218838;
+  }
+  

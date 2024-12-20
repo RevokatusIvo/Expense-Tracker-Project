@@ -1,0 +1,211 @@
+
+  
+  .invitation-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .invitation-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .invitation-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .accept-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .accept-button:hover {
+    background-color: #45a049;
+  }
+  
+  .decline-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .decline-button:hover {
+    background-color: #e53935;
+  }
+  
+  
+  .toggle-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  
+  .toggle-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .invitations-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .invitations-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+/* Main container for the View Families page */
+.view-families-container {
+    position: sticky;
+    margin-top: 100px;
+    width: 200%;
+    max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+/* Title for the View Families section */
+.view-families-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Loading message */
+.view-families-container p {
+    font-size: 18px;
+    color: #888;
+    text-align: center;
+}
+
+/* Family list container */
+.families-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual family item */
+.family-card {
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.family-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.family-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.family-card p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.family-card p strong {
+    color: #333;
+}
+
+/* Button to manage the family */
+.manage-family-button {
+    padding: 12px 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.manage-family-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* No Families message when the list is empty */
+.no-families-message {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    margin-top: 50px;
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 768px) {
+    .view-families-container {
+        width: 95%;
+        margin-top: 80px;
+        padding: 20px;
+    }
+
+    .view-families-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .family-card {
+        padding: 15px;
+    }
+
+    .family-card h3 {
+        font-size: 18px;
+    }
+
+    .manage-family-button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .no-families-message {
+        font-size: 16px;
+    }
+}

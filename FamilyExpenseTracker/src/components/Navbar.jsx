@@ -17,15 +17,19 @@ function Navbar({ user }) {
 
   return (
     <nav className="navbar">
-      <h1 className="navbar-title">Expense Tracker</h1>
+      <h1 className="navbar-title">Family Expense Tracker</h1>
       <div className='nav-links-container'>
         
         <div className="nav-links">
           {user ? (
             <>
+              <Link to="/profile" className="nav-link">Profile</Link>
               <Link to="/" className="nav-link">Dashboard</Link>
-              <Link to="/add-expenses" className="nav-link">Add Expense</Link>
-              <Link to="/view-expenses" className="nav-link">View Expenses</Link>
+              <Link to="/add-expenses" className="nav-link">Add Transaction</Link>
+              <Link to="/view-expenses" className="nav-link">View Transaction</Link>
+              <Link to="/create-family" className="nav-link">Create Family</Link>
+              <Link to="/view-family" className="nav-link">View Family</Link>
+              
               <Link onClick={handleLogout} className="nav-link">Logout</Link>
             </>
           ) : null}

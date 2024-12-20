@@ -4,16 +4,18 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f7f7f7;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: flex-start; /* Start content from the top */
   align-items: center;
   height: 100vh;
-  width: 100%;
+  margin: 0;
+  box-sizing: border-box; /* Include padding in body dimensions */
 }
 
 /* App container */
 .app {
   width: 100%;
-  max-width: 400px; /* Control width of the form */
+  max-width: 1000px; /* Control width of the form */
   height: auto;
   background-color: #f7f7f7;
   padding: 20px;
@@ -35,6 +37,7 @@ body {
   font-size: 2rem;
   color: #333;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Form */
@@ -148,9 +151,10 @@ body {
 
 /* Main Container */
 .container {
-  width: 100%;
+  position: sticky;
+  margin-top: 100px;
+  width: 200%;
   max-width: 800px;
-  margin-top: 90px;
   background-color: #ffffff;
   border-radius: 12px;
   padding: 25px;
@@ -222,21 +226,30 @@ body {
 }
 
 /* Expense List */
+.scrollable-list {
+  max-height: 400px; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #ccc; /* Optional: Add a border */
+  padding: 10px; /* Optional: Add padding */
+  margin-top: 20px; /* Optional: Add spacing */
+  border-radius: 5px;
+
+}
+.scrollable-list::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge: Hide scrollbar */
+}
+
 .expense-list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px; /* Add spacing between expense cards */
 }
 
 .expense-card {
-  background-color: #f8f9fa;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
+  border: 1px solid #ddd;
   padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 }
 
 .expense-card h4 {
@@ -332,6 +345,46 @@ body {
   background-color: #0056b3; /* Focused day background */
   color: white;
 }
+
+/* Style for the family/group selector */
+.family-selector {
+  margin-bottom: 20px; /* Space between the select dropdown and other elements */
+  display: flex;
+  flex-direction: column;
+}
+
+.family-selector label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.family-selector select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: #f8f9fa;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.family-selector select:hover {
+  border-color: #007bff;
+  background-color: #e9ecef;
+}
+
+.family-selector select:focus {
+  border-color: #007bff;
+  outline: none;
+  background-color: #fff;
+}
+
+.family-selector select option {
+  padding: 10px;
+}
+
 
 /* Navigation Buttons */
 .react-datepicker__navigation {
