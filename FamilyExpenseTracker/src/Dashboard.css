@@ -1,115 +1,43 @@
-/* General Layout */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
-}
-
-.app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-}
-
-/* Navbar Styles */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #0069d9;
-  color: #fff;
-  padding: 1rem;
-  z-index: 1000;
-}
-
-.navbar-title {
-  font-size: 1.8rem;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.2rem;
-}
-
-.nav-link {
-  color: #fff;
-  text-decoration: none;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-}
-
-/* Main Content Layout */
-/* Main Content Layout */
 .dashboard-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  background-color: #f4f6f8;
-  padding-top: 100px; /* Offset for fixed navbar */
-  padding-bottom: 30px;
-  width: 100%;
-  max-width: 1400px; /* Increase max-width for testing */
-  margin: 0 auto;
-}
-
-/* Chart and Categories Containers */
-.chart-container,
-.categories-container {
-  width: 100%; /* Use full width available */
-  max-width: 1200px; /* Keep max-width large */
-  margin: 30px 0; /* Adjust margin if necessary */
-  padding: 30px;
-  background-color: #ffffff;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-}
-
-.chart-container h3,
-.categories-container h3 {
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f5f5;
   text-align: center;
+}
+
+.get-started-content {
+  max-width: 500px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.get-started-content h1 {
+  font-size: 2rem;
   color: #333;
-  font-size: 1.8rem; /* Larger title font */
+  margin-bottom: 10px;
 }
 
-/* Categories List Styling */
-.categories-container ul {
-  list-style: none;
-  padding: 0;
-}
-
-.categories-container li {
-  font-size: 1.2rem; /* Larger font for category items */
+.get-started-content p {
+  font-size: 1.2rem;
   color: #555;
-  margin: 8px 0;
+  margin-bottom: 20px;
 }
 
-/* Chart Size Adjustments */
-.chart-container canvas {
-  width: 100% !important; /* Ensure the chart stretches with the container */
-  height: auto !important; /* Maintain proportional height */
-  max-height: 500px; /* Increased height for larger charts */
+.get-started-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 0.5rem;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .chart-container,
-  .categories-container {
-    width: 95%; /* Slightly wider on smaller screens */
-  }
+.get-started-button:hover {
+  background-color: #0056b3;
 }

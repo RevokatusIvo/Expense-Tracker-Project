@@ -1,53 +1,53 @@
-import React, { useState, useEffect } from "react";
-import { auth, db } from "./firebasecin/firebase";
-import { doc, getDoc, setDoc, updateDoc, getDocs, collection, query, where } from "firebase/firestore";
-import { updateEmail, reauthenticateWithCredential, EmailAuthProvider, updatePassword } from "firebase/auth";
-import "./ProfilePage.css";
+  import React, { useState, useEffect } from "react";
+  import { auth, db } from "./firebasecin/firebase";
+  import { doc, getDoc, setDoc, updateDoc, getDocs, collection, query, where } from "firebase/firestore";
+  import { updateEmail, reauthenticateWithCredential, EmailAuthProvider, updatePassword } from "firebase/auth";
+  import "./ProfilePage.css";
 
-function ProfilePage() {
-  const [userId, setUserId] = useState("");
-  const [customId, setCustomId] = useState("");
-  const [initialCustomId, setInitialCustomId] = useState("");
-  const [email, setEmail] = useState("");
-  const [newEmail, setNewEmail] = useState("");
-  const [currentPassword, setCurrentPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const [confirmNewPassword, setConfirmNewPassword] = useState("");
-  const [loading, setLoading] = useState(true);
+  function ProfilePage() {
+    const [userId, setUserId] = useState("");
+    const [customId, setCustomId] = useState("");
+    const [initialCustomId, setInitialCustomId] = useState("");
+    const [email, setEmail] = useState("");
+    const [newEmail, setNewEmail] = useState("");
+    const [currentPassword, setCurrentPassword] = useState("");
+    const [newPassword, setNewPassword] = useState("");
+    const [confirmNewPassword, setConfirmNewPassword] = useState("");
+    const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const userDocRef = doc(db, "users", auth.currentUser.uid);
-        const userDoc = await getDoc(userDocRef);
+    useEffect(() => {
+      const fetchUserData = async () => {
+        try {
+          const userDocRef = doc(db, "users", auth.currentUser.uid);
+          const userDoc = await getDoc(userDocRef);
 
-        if (userDoc.exists()) {
-          const userData = userDoc.data();
-          setUserId(userData.userId);
-          setCustomId(userData.customId || userData.userId);
-          setInitialCustomId(userData.customId || userData.userId);
-        } else {
-          // Initialize user document if it doesn't exist
-          const newUser = {
-            userId: auth.currentUser.uid,
-            customId: auth.currentUser.uid,
-          };
-          await setDoc(userDocRef, newUser);
-          setUserId(newUser.userId);
-          setCustomId(newUser.customId);
-          setInitialCustomId(newUser.customId);
+          if (userDoc.exists()) {
+            const userData = userDoc.data();
+            setUserId(userData.userId);
+            setCustomId(userData.customId || userData.userId);
+            setInitialCustomId(userData.customId || userData.userId);
+          } else {
+            // Initialize user document if it doesn't exist
+            const newUser = {
+              userId: auth.currentUser.uid,
+              customId: auth.currentUser.uid,
+            };
+            await setDoc(userDocRef, newUser);
+            setUserId(newUser.userId);
+            setCustomId(newUser.customId);
+            setInitialCustomId(newUser.customId);
+          }
+          setEmail(auth.currentUser.email);
+          setNewEmail(auth.currentUser.email);
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+        } finally {
+          setLoading(false);
         }
-        setEmail(auth.currentUser.email);
-        setNewEmail(auth.currentUser.email);
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+      };
 
-    fetchUserData();
-  }, []);
+      fetchUserData();
+    }, []);
 
   const handleUpdateProfile = async () => {
     if (!/^[a-zA-Z0-9]{4,}$/.test(customId)) {

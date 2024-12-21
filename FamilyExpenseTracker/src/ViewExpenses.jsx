@@ -111,9 +111,11 @@ function ViewExpenses() {
       <h3>Total Expense: Rp {totalExpense.toLocaleString("en-US")}</h3>
       <h3>Total Balance: Rp {totalBalance.toLocaleString("en-US")}</h3>
 
-      {/* Only show expense list if there are filtered transactions */}
+      {/* Only show expense list if there are filtetd transactions */}
       {filteredTransactions.length === 0 ? (
-        <p>{selectedFamily ? (startDate || endDate ? "No transactions found for this date range." : "No transactions in this family.") : "Please select a family."}</p>
+        <p>{selectedFamily ? (startDate || endDate ? "No transactions found for this date range." :
+           "No transactions in this family.") :
+           "Please select a family."}</p>
       ) : (
         <div className="scrollable-list">
           <div className="expense-list">

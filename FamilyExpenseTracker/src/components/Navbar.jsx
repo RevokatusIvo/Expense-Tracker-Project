@@ -24,7 +24,7 @@ function Navbar({ user }) {
           {user ? (
             <>
               <Link to="/profile" className="nav-link">Profile</Link>
-              <Link to="/" className="nav-link">Dashboard</Link>
+              <Link to="/" className="nav-link">Get Started</Link>
               <Link to="/add-expenses" className="nav-link">Add Transaction</Link>
               <Link to="/view-expenses" className="nav-link">View Transaction</Link>
               <Link to="/create-family" className="nav-link">Create Family</Link>
